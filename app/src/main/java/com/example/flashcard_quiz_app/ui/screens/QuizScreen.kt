@@ -79,10 +79,9 @@ fun QuizScreen(viewModel: FlashcardViewModel, navController: NavController) {
                 TextField(
                     value = answer,
                     onValueChange = { answer = it },
-                    label = { Text("Answer", color = Color.Black) },
-                    textStyle = TextStyle(color = Color.Black),
-                    colors = TextFieldDefaults
-                        .textFieldColors(containerColor = Color.hsl(15f, 0.9f, 0.9f)),
+                    label = { Text("Answer", color = Color.White) },
+                    textStyle = TextStyle(color = Color.White),
+                    colors = TextFieldDefaults.colors(Color.hsl(15f, 0.9f, 0.9f)),
                     modifier = Modifier
                         .padding(start = 2.dp, top = 56.dp)
                         .fillMaxWidth(0.79f)

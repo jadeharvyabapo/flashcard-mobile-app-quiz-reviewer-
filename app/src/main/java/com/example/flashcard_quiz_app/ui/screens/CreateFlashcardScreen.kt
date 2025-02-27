@@ -64,10 +64,10 @@ fun CreateFlashcardScreen(viewModel: FlashcardViewModel, navController: NavContr
             TextField(
                 value = question,
                 onValueChange = { question = it },
-                label = { Text("Enter your Question", color = Color.Black) },
-                textStyle = TextStyle(color = Color.Black),
+                label = { Text("Enter your Question", color = Color.White) },
+                textStyle = TextStyle(color = Color.White),
                 colors = TextFieldDefaults
-                    .textFieldColors(containerColor = Color.hsl(15f, 0.9f, 0.9f)),
+                    .colors(Color.hsl(15f, 0.9f, 0.9f)),
                 modifier = Modifier
                     .padding(start = 16.dp, top = 96.dp)
                     .fillMaxWidth(0.95f),
@@ -80,10 +80,9 @@ fun CreateFlashcardScreen(viewModel: FlashcardViewModel, navController: NavContr
             TextField(
                 value = answer,
                 onValueChange = { answer = it },
-                label = { Text("Enter your Answer", color = Color.Black) },
-                textStyle = TextStyle(color = Color.Black),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.hsl(
+                label = { Text("Enter your Answer", color = Color.White) },
+                textStyle = TextStyle(color = Color.White),
+                colors = TextFieldDefaults.colors(Color.hsl(
                         15f,
                         0.9f,
                         0.9f
