@@ -1,54 +1,62 @@
 package com.example.flashcard_quiz_app.ui.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.flashcard_quiz_app.R
 
 @Composable
-fun ScoreScreen(score: String?, navController: NavController) {
-    Column (
-       // verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.background(Color.White)
-    ){
-        val imageModifier = Modifier
-            .size(300.dp)
-            .background(Color.White)
-           .padding(top = 70.dp)
-        Image(
-            painter = painterResource(id = R.drawable.result),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = imageModifier
+fun ScoreScreen(correctAnswers: Int, totalQuestions: Int, navController: NavController) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Your Score",
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black
         )
         Text(
-            text = "Your score: $score",
-            modifier = Modifier.padding(top = 15.dp),
+            text = "$correctAnswers / $totalQuestions", // Display the score
+            fontSize = 48.sp,
+            fontWeight = FontWeight.ExtraBold,
             color = Color.Black,
-            fontSize = 23.sp,
-            fontWeight = FontWeight.W600
-            )
+            modifier = Modifier.padding(top = 16.dp)
+        )
+        Button(
+            onClick = {
+                navController.navigate("quiz") {
+                    popUpTo("score/{correctAnswers}/{totalQuestions}") { inclusive = true }
+                    launchSingleTop = true
+                }
+            },
+            modifier = Modifier.padding(top = 8.dp)
+        ) {
+            Text("Retake Quiz")
+        }
 
-        FilledTonalButton(onClick = { navController.navigate("create_flashcard") },
-            modifier = Modifier.padding(start = 16.dp, top = 45.dp),
-            colors = ButtonDefaults.buttonColors(Color.hsl(15f, 0.9f, 0.9f))) {
-            Text("Back to 1st screen")
+        // Button to Go Back to Subjects
+        Button(
+            onClick = {
+                navController.navigate("my_subjects") {
+                    popUpTo("score/{correctAnswers}/{totalQuestions}") { inclusive = true }
+                    launchSingleTop = true
+                }
+            },
+            modifier = Modifier.padding(top = 16.dp)
+        ) {
+            Text("Back to Subjects")
         }
     }
 }

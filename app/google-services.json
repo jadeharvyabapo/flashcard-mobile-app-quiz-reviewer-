@@ -1,26 +1,44 @@
 {
   "project_info": {
-    "project_number": "51806807403",
-    "project_id": "flashcard-quiz-app-7d16b",
-    "storage_bucket": "flashcard-quiz-app-7d16b.appspot.com"
+    "project_number": "772766294588",
+    "project_id": "quiz-flashcard-app",
+    "storage_bucket": "quiz-flashcard-app.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:51806807403:android:3e426d8f574573cc03182e",
+        "mobilesdk_app_id": "1:772766294588:android:ae3667dca063aa0b375939",
         "android_client_info": {
           "package_name": "com.example.flashcard_quiz_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "772766294588-furiu5360djv0cuio9bqklm9h1dfa0lv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flashcard_quiz_app",
+            "certificate_hash": "71b1072185a96e775e2c52227ba770e6dcda907f"
+          }
+        },
+        {
+          "client_id": "772766294588-ickuccicjqiliml9bhkg4dkl4dplnds7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAbiwJbs4busueRnHa5Y-YxMrLfqzDU890"
+          "current_key": "AIzaSyBnkYJrAliOk67537sh9FdBOWTN5pZV2Zo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772766294588-ickuccicjqiliml9bhkg4dkl4dplnds7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
